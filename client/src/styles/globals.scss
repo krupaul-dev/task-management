@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+// Global reset & base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $color-bg;
+  color: $color-text;
+  min-height: 100vh;
+}

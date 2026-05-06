@@ -1,0 +1,16 @@
+{
+  "name": "task-management-server",
+  "version": "1.0.0",
+  "description": "Express 5 + Node.js backend for task management",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}

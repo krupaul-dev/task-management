@@ -1,0 +1,24 @@
+@use 'sass:list';
+@use 'variables' as *;
+
+// Flex row with optional gap
+@mixin flex-row($gap: $spacing-sm) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+// Focus ring using the primary color
+@mixin focus-ring($color: $color-primary) {
+  outline: none;
+  border-color: $color;
+}
+
+// Smooth transition for one or more properties
+@mixin transition($props...) {
+  $result: ();
+  @each $prop in $props {
+    $result: list.append($result, $prop $transition-fast, comma);
+  }
+  transition: $result;
+}
