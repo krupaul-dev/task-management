@@ -1,0 +1,15 @@
+{
+  "name": "task-management",
+  "version": "1.0.0",
+  "description": "Full-stack task management app — React 19 + Express 5 + Node.js",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "npm run start --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
