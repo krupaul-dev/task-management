@@ -16,10 +16,13 @@ task-management/
 ├── client/          # React 19 + Vite frontend
 │   ├── public/
 │   └── src/
+│       ├── styles/
+│       │   ├── _variables.scss   # Design tokens (colors, spacing, etc.)
+│       │   ├── _mixins.scss      # Reusable SCSS mixins
+│       │   └── globals.scss      # Global reset & base styles
 │       ├── App.jsx
-│       ├── App.css
-│       ├── main.jsx
-│       └── index.css
+│       ├── App.scss              # Component styles (nested, uses variables/mixins)
+│       └── main.jsx
 ├── server/          # Express 5 + Node.js backend
 │   └── src/
 │       ├── index.js

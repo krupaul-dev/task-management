@@ -1,0 +1,114 @@
+@use './styles/variables' as *;
+@use './styles/mixins' as *;
+
+.container {
+  max-width: $container-max-width;
+  margin: $spacing-3xl auto;
+  padding: $spacing-2xl;
+  background: $color-surface;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-card;
+
+  h1 {
+    font-size: $font-size-h1;
+    font-weight: 700;
+    margin-bottom: $spacing-xl;
+    color: $color-text;
+  }
+}
+
+// ─── Add-task form ────────────────────────────────────────────────────────────
+.add-form {
+  @include flex-row($spacing-sm);
+  margin-bottom: $spacing-xl;
+
+  input {
+    flex: 1;
+    padding: 10px 14px;
+    border: $border-width solid $color-border;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    @include transition(border-color);
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: $color-primary;
+    color: $color-surface;
+    border: none;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    cursor: pointer;
+    @include transition(background-color);
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
+
+// ─── Status messages ──────────────────────────────────────────────────────────
+.status {
+  text-align: center;
+  color: $color-text-muted;
+  margin-bottom: $spacing-lg;
+
+  &.error {
+    color: $color-error;
+  }
+}
+
+// ─── Task list ────────────────────────────────────────────────────────────────
+.task-list {
+  list-style: none;
+}
+
+.task-item {
+  @include flex-row($spacing-md);
+  padding: $spacing-md 0;
+  border-bottom: 1px solid $color-border-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    accent-color: $color-primary;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  span {
+    flex: 1;
+    font-size: $font-size-base;
+  }
+
+  &.completed span {
+    text-decoration: line-through;
+    color: $color-text-faint;
+  }
+}
+
+// ─── Delete button ────────────────────────────────────────────────────────────
+.delete-btn {
+  background: none;
+  border: none;
+  color: $color-text-faint;
+  font-size: $font-size-sm;
+  cursor: pointer;
+  padding: $spacing-xs 6px;
+  border-radius: $border-radius-sm;
+  @include transition(color, background-color);
+
+  &:hover {
+    color: $color-error;
+    background-color: $color-error-bg;
+  }
+}
