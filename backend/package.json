@@ -1,5 +1,5 @@
 {
-  "name": "task-management-server",
+  "name": "task-management-backend",
   "version": "1.0.0",
   "description": "Express 5 + Node.js backend for task management",
   "type": "module",

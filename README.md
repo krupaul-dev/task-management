@@ -13,7 +13,7 @@ A full-stack blank-template starter built with the latest:
 
 ```
 task-management/
-├── client/          # React 19 + Vite frontend
+├── frontend/        # React 19 + Vite frontend
 │   ├── public/
 │   └── src/
 │       ├── styles/
@@ -23,7 +23,8 @@ task-management/
 │       ├── App.jsx
 │       ├── App.scss              # Component styles (nested, uses variables/mixins)
 │       └── main.jsx
-├── server/          # Express 5 + Node.js backend
+├── backend/         # Express 5 + Node.js backend
+│   ├── .env.example
 │   └── src/
 │       ├── index.js
 │       └── routes/
@@ -56,12 +57,12 @@ npm run dev
 | Frontend | http://localhost:5173    |
 | Backend  | http://localhost:5000    |
 
-### Configure the server
+### Configure the backend
 
-Copy `server/.env.example` to `server/.env` and adjust as needed:
+Copy `backend/.env.example` to `backend/.env` and adjust as needed:
 
 ```bash
-cp server/.env.example server/.env
+cp backend/.env.example backend/.env
 ```
 
 ### Build the frontend for production
@@ -88,5 +89,5 @@ npm run build
 
 - Connect a database (e.g. MongoDB, PostgreSQL)
 - Add authentication (e.g. JWT, sessions)
-- Write tests (e.g. Vitest for client, Node `node:test` for server)
-- Deploy (e.g. Vercel for client, Railway/Render for server)
+- Write tests (e.g. Vitest for frontend, Node `node:test` for backend)
+- Deploy (e.g. Vercel for frontend, Railway/Render for backend)
