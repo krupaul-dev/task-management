@@ -39,11 +39,43 @@ task-management/
 ### Prerequisites
 - **Node.js** ≥ 18 (v20 recommended)
 - **npm** ≥ 9
+- **Docker** + **Docker Compose**
 
 ### Install dependencies
 
 ```bash
 npm run install:all
+```
+
+### Create backend environment file
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+Then set your local database values in `backend/.env`:
+
+```dotenv
+DATABASE_URL=postgresql://app_user:app_pass@localhost:5433/task_manager
+DB_HOST=localhost
+DB_PORT=5433
+DB_NAME=task_manager
+DB_USER=app_user
+DB_PASSWORD=app_pass
+```
+
+### Start local database (Docker)
+
+```bash
+npm run db:up
+```
+
+Useful database commands:
+
+```bash
+npm run db:ps
+npm run db:logs
+npm run db:down
 ```
 
 ### Run in development (both servers)
@@ -52,18 +84,17 @@ npm run install:all
 npm run dev
 ```
 
+Or start DB and app together:
+
+```bash
+npm run dev:with-db
+```
+
 | Service  | URL                      |
 |----------|--------------------------|
 | Frontend | http://localhost:5173    |
 | Backend  | http://localhost:5000    |
-
-### Configure the backend
-
-Copy `backend/.env.example` to `backend/.env` and adjust as needed:
-
-```bash
-cp backend/.env.example backend/.env
-```
+| Postgres | localhost:5433           |
 
 ### Build the frontend for production
 

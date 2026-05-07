@@ -5,9 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:with-db": "npm run db:up && npm run dev",
     "start": "npm run start --prefix backend",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
-    "build": "npm run build --prefix frontend"
+    "build": "npm run build --prefix frontend",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:restart": "docker compose down && docker compose up -d",
+    "db:ps": "docker compose ps",
+    "db:logs": "docker compose logs -f db"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
